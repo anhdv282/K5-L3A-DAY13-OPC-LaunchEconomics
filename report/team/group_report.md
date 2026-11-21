@@ -18,7 +18,7 @@ Tóm tắt cách nhóm làm từng nhiệm vụ A–E và link tới file hồ s
 
 - A–B: code cộng mọi lần chạy, chi phí xem lại/làm lại; phân tích theo loại và độ nhạy trong [bảng chi phí](bang_chi_phi.md).
 - C: giữ hai bộ nhãn độc lập; đồng thuận 55%, đã viết lại định nghĩa và chọn 5 ca khắc phục trong [bảng lỗi](bang_loi.md).
-- D–E: [pilot plan](pilot_plan.yaml), [chỉ số và event](chi_so.md), [hồ sơ launch v0](ho_so_launch_v0.md) ghi đủ cỡ mẫu, rủi ro, điều kiện và người phụ trách.
+- D: [pilot plan](pilot_plan.yaml) ghi đủ cỡ mẫu, đánh đổi và luật dừng. E1: code tính ba chỉ số; [chỉ số và event](chi_so.md), [hồ sơ launch v0](ho_so_launch_v0.md) do thành viên phụ trách tiếp tục hoàn thiện.
 
 ## 4. Kết quả
 
@@ -26,7 +26,7 @@ Con số chính (ghi nhãn `simulated` khi cần) và đề xuất cuối của 
 
 Chi phí 4.472 đ/việc; chi phí cả hệ thống chưa cộng cố định 5.865 đ/yêu cầu [simulated]. Chỉ số chính 82,83%, bỏ qua gợi ý 27,12%, mở lại 4,25%; chưa có đối chứng nên chưa kết luận tác động.
 
-Đề xuất Go có điều kiện cho pilot noi_dia + hang_nang: 20 nhân viên/nhóm, 299 yêu cầu/người, MDE 6 điểm; power chỉ khoảng 0,64 nếu tác động thật 5 điểm. Chưa ghi nhận kết quả duyệt chéo của hội đồng.
+Kế hoạch pilot noi_dia + hang_nang: 20 nhân viên/nhóm, 299 yêu cầu/người, MDE 6 điểm; power chỉ khoảng 0,64 nếu tác động thật 5 điểm. Đề xuất cuối chờ người giữ hồ sơ chốt trong `ho_so_launch_v0.md`; chưa ghi nhận kết quả duyệt chéo của hội đồng.
 
 ## 5. Khó khăn và cách xử lý
 
