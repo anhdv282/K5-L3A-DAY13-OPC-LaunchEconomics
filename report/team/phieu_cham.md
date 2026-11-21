@@ -16,6 +16,11 @@ Nhóm số n chấm nhóm số n + 1; nhóm cuối chấm nhóm 1. Chấm theo b
 
 **Lý do:** Hồ sơ đủ bảy mục, mọi số giả lập có nhãn, đề xuất nêu cả hai con số bất lợi (power 0,64; xem lại 100% lên 0,98–1,03× [simulated]) và gắn mỗi điều kiện với một vai trò. Hội đồng thêm hai điều kiện: tách luật hoàn trùng thành luật riêng, tắt ngay trong 30 phút khi có 1 ca; và Giám đốc vận hành ký chấp nhận MDE 6 điểm trước ngày bắt đầu pilot, không phải trước ngày quyết định.
 
-**Một câu hỏi cho đội trình:** Luật dừng 1 ghi "≥ 1 ca hoàn trùng TRONG 3 ngày liên tiếp": nếu ngày đầu có 1 ca hoàn trùng, nhóm tắt trợ lý ngay hay đợi đủ 3 ngày? Và ở bước 4 người, mức lệch 2 điểm so với đối chứng có đủ tin để tắt pilot không?
+**Một câu hỏi cho đội trình:** Luật dừng 1 ghi "≥ 1 ca hoàn trùng TRONG 3 ngày liênđa tiếp": nếu ngày đầu có 1 ca hoàn trùng, nhóm tắt trợ lý ngay hay đợi đủ 3 ngày? Và ở bước 4 người, mức lệch 2 điểm so với đối chứng có đủ tin để tắt pilot không?
 
-**Câu trả lời của đội trình (ghi lại tại buổi):** ...
+**Câu trả lời của đội trình (ghi lại tại buổi):**
+
+- Hoàn trùng thì tắt ngay, không đợi 3 ngày: hoàn trùng là mất tiền thật, ngưỡng 0 ca. Đối soát sổ cái chạy mỗi giờ; phát hiện thì Giám đốc vận hành tắt trong 30 phút. Đội trình thừa nhận câu chữ "TRONG 3 ngày" đang áp chung cho cả ba vế là viết sai, cần tách hoàn trùng thành luật riêng.
+- Ở bước 4 người, chênh 2 điểm chưa đủ tin để tắt: theo mô phỏng của đội trình, dù trợ lý không gây hại, luật vẫn tắt oan khoảng 20% số lần; muốn tắt oan 5% thì ngưỡng phải là 3,5 điểm. Vì vậy ở bước 4 người, chênh 2 điểm chỉ dùng để dừng mở rộng và đọc lại trace các ca mở lại; chỉ tắt hẳn khi chênh ≥ 3,5 điểm hoặc vượt trần 6%. Đến bước 20 người, ngưỡng 2 điểm mới đủ tin (tắt oan khoảng 2%).
+
+**Nhận xét của hội đồng sau câu trả lời:** câu trả lời xử lý đúng cả hai điểm yếu, có số và có người tắt; giữ 30/30 và quyết định Go có điều kiện, với điều kiện đội trình sửa `pilot_plan.yaml` theo đúng hai ý trên (tách luật hoàn trùng; ngưỡng tắt theo bước rollout).
