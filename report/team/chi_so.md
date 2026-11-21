@@ -45,5 +45,7 @@ Chỉ số nào không tính được từ danh sách event thì chưa đo đư�
 
 | Rủi ro | Tác động đã tính | Dấu hiệu theo dõi | Hành động | Người phụ trách |
 | --- | --- | --- | --- | --- |
-| ... | ... | ... | ... | ... |
-| ... | ... | ... | ... | ... |
+| Số ca làm lại tăng gấp đôi | B1: +51,8%, chi phí mỗi việc thành công lên 6.787 đ [simulated]; yếu tố nhạy nhất | Tỉ lệ `staff_rework_completed` / yêu cầu theo tuần > 7% trong phạm vi (đợt chạy thử: 48/982 = 4,9%) | Thu hẹp về noi_dia, rà 20 trace làm lại gần nhất để tìm nguyên nhân gốc trước khi mở tiếp | PM trợ lý hoàn phí |
+| Phải xem lại 100% kéo dài | B4: 11.743 đ = 0,98× mức 12.000 đ; 12.415 đ = 1,03× nếu làm lại 15,3 phút/ca như dữ liệu [simulated]. Hoà vốn khi mỗi lần xem lại ≤ 5,1 phút (≤ 4,8 phút với 15,3 phút làm lại) [simulated] | % yêu cầu có `staff_review_decision` còn > 50% ở cuối bước rollout 0,25; hoặc phút xem lại đo thật trung bình > 5 phút | Giảm tỉ lệ xem lại theo bậc khi tỉ lệ sửa + bỏ < 15% (đợt chạy thử trong phạm vi: 27/128 = 21,1%) | Trưởng nhóm CSKH |
+| Lương nhân viên tăng | B1: lương tăng 25% thì +23,1%, lên 5.506 đ [simulated]; yếu tố nhạy thứ ba | Đơn giá phút nhân viên trong kỳ điều chỉnh lương > 2.000 đ | Cập nhật `luong_phut` trong mô hình và tính lại tỉ số so với 12.000 đ trước khi quyết định mở rộng | Giám đốc vận hành |
+| Khối lượng thấp hơn dự kiến | A4: chi phí cố định 40 triệu/tháng là +1.185 đ/việc ở 45.000 yêu cầu/tháng, +2.370 đ/việc nếu còn một nửa (tổng 5.784 đ = 0,48×) [simulated] | Số việc thành công theo tuần < 50% kế hoạch (kế hoạch đầy đủ: 33.750 việc/tháng) | Không mở rộng pilot; xem lại hợp đồng chi phí cố định | PM trợ lý hoàn phí |

@@ -12,7 +12,7 @@ Nhóm: OPC · Lớp: L3A
 | 4 · Chỉ số chính, chỉ số dùng, chỉ số an toàn | Chỉ số trong đợt chạy thử (không có đối chứng): chính 82,83% (994/1.200) đóng trong 24 giờ và không mở lại 7 ngày · dùng 27,12% (48/177) bỏ qua gợi ý · an toàn 4,25% (51/1.200) mở lại trong 7 ngày; 10 event có `trace_id` | Xong, có bằng chứng | Trưởng nhóm CSKH |
 | 5 · Bảng lỗi và cách khắc phục | 20 ca: Do người dùng 4 · Hệ thống 5 · Ngữ cảnh 4 · Giới hạn 4 · Ngầm 3; đồng thuận độc lập 11/20 = 55% (< 80%), đã viết lại định nghĩa theo bốn câu hỏi thứ tự và ghi quy tắc cho 9 ca không trùng; bảng khắc phục 5 ca (9, 7, 18, 13, 12), mỗi ca có event, ngưỡng và một vai trò phụ trách | Xong, có bằng chứng | Kỹ sư trưởng agent |
 | 6 · Pilot plan | (chờ D1, D2 trong `pilot_plan.yaml`) | Chưa | Giám đốc vận hành |
-| 7 · Rủi ro kinh tế | (chờ E2 trong `chi_so.md`) | Chưa | PM trợ lý hoàn phí |
+| 7 · Rủi ro kinh tế | 4 rủi ro trong `chi_so.md`: làm lại gấp đôi +51,8% (6.787 đ) · xem lại 100% 0,98× đến 1,03× · lương +25% thì +23,1% · khối lượng còn một nửa thì cố định +2.370 đ/việc [simulated]; mỗi dòng có dấu hiệu theo dõi, ngưỡng và vai trò phụ trách | Giả lập | PM trợ lý hoàn phí |
 
 **Đề xuất:** Go · Go có điều kiện · No-go (giữ một). Go có điều kiện: ghi từng điều kiện, người phụ trách, ngày kiểm tra. No-go: ghi việc phải làm để quay lại cổng.
 
