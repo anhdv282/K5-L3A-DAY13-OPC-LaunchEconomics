@@ -14,6 +14,13 @@ Nhóm: OPC · Lớp: L3A
 | 6 · Pilot plan | Chia theo nhân viên 20 + 20, ngẫu nhiên phân tầng theo depot; phạm vi noi_dia + hang_nang. Mức 5 điểm cần 1.251 yêu cầu/nhóm nhưng 20 người/nhóm chỉ đạt tối đa 1.000 mẫu hiệu dụng, nên chấp nhận MDE 6 điểm: 859/nhóm, m ≥ 299 yêu cầu/người, DE 6,96. Bất lợi: power chỉ khoảng 0,64 nếu tác động thật là 5 điểm. 4 luật dừng NẾU – TRONG – THÌ – KHÔNG THÌ (mở lại +2 điểm hoặc > 6%, hoàn trùng ≥ 1 ca, chi phí > 8.000 đ/việc, bỏ qua gợi ý > 40%); quyết định 05/01/2027 | Xong, có bằng chứng | Giám đốc vận hành |
 | 7 · Rủi ro kinh tế | 4 rủi ro trong `chi_so.md`: làm lại gấp đôi +51,8% (6.787 đ) · xem lại 100% 0,98× đến 1,03× · lương +25% thì +23,1% · khối lượng còn một nửa thì cố định +2.370 đ/việc [simulated]; mỗi dòng có dấu hiệu theo dõi, ngưỡng và vai trò phụ trách | Giả lập | PM trợ lý hoàn phí |
 
-**Đề xuất:** Go · Go có điều kiện · No-go (giữ một). Go có điều kiện: ghi từng điều kiện, người phụ trách, ngày kiểm tra. No-go: ghi việc phải làm để quay lại cổng.
+**Lý do:** trong phạm vi noi_dia + hang_nang, chi phí mỗi việc thành công cộng cố định là 4.599 đ = 0,38× mức 12.000 đ; tính cả hệ thống trên mọi loại là 0,49× [simulated]. Hai con số bất lợi: xem lại 100% thì lên 0,98× đến 1,03× [simulated], và với 40 nhân viên pilot chỉ đủ mẫu cho mức chênh 6 điểm (power khoảng 0,64 nếu tác động thật là 5 điểm). quoc_te (1,88×) và doi_tac (0,85×, điều khoản riêng) ở ngoài phạm vi [simulated].
 
-- ...
+**Đề xuất: Go có điều kiện** cho pilot noi_dia + hang_nang, chia 20 + 20 nhân viên, quyết định ngày 05/01/2027. Chưa đủ điều kiện nào thì không bắt đầu hoặc không chuyển bước rollout.
+
+| Điều kiện | Người phụ trách | Ngày kiểm tra |
+| --- | --- | --- |
+| Có khoá chống trùng (idempotency_key) và đối soát sổ cái theo trace_id mỗi giờ, chặn lỗi kiểu ca 7 và ca 20; chạy thử 0 ca hoàn trùng | Kỹ sư trưởng agent | 22/11/2026, trước ngày bắt đầu |
+| Ký chấp nhận MDE 6 điểm và power 0,64 ở mức 5 điểm; không diễn giải kết quả không có ý nghĩa thống kê là "trợ lý không có tác động" | Giám đốc vận hành | 22/11/2026, trước ngày bắt đầu |
+| Bật đủ 10 event có trace_id trong `chi_so.md`; sau tuần 1 thay phút xem lại và làm lại simulated bằng phút đo thật, tính lại chi phí mỗi việc thành công | PM trợ lý hoàn phí | 29/11/2026, cuối bước 0,10 |
+| Kế hoạch giảm xem lại theo bậc: chỉ giảm khi tỉ lệ sửa + bỏ < 15% và kiểm tra mẫu không thấy lỗi ngầm; mục tiêu mỗi lần xem lại ≤ 5 phút để không vượt mức hoà vốn (B4) | Trưởng nhóm CSKH | 06/12/2026, cuối bước 0,25 |
