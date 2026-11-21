@@ -94,15 +94,18 @@ Kiểm tra trên số chưa làm tròn: "giảm một nửa" giảm đúng bằn
 
 ## Kiểm số tính tay
 
+Phần dưới là bản nháp từ nhánh gộp, giữ để đối chiếu; chưa có xác nhận người tính và cách tính. Cả 5 dòng lệch trên 2% so với code, không dùng thay kết quả A2 đã kiểm tra.
+
 - Người tính: [họ tên], ngày [dd/mm]
-- Tính bằng bảng tính (không dùng code), trước khi xem output của `lab13.py`.
+- Cách lập bản nháp: cần người tính xác nhận có dùng bảng tính và thời điểm tính.
 - Công thức: [dán các công thức ở bảng trên, hoặc mô tả ngắn]
 
-| Khoản | Tính tay (đ) | Từ code (đ) | Lệch |
+| Khoản | Tính tay (đ), bản nháp | Từ code (đ) | Lệch so với code |
 | --- | ---: | ---: | ---: |
-| Token | 240.000 | 245.585 | 2,33% |
-| Tool | 82.000 | 84.000 | 2,44% |
-| Làm lại | 2.200.000 | 2.264.000 | 2,91% |
-| Tổng | 4.250.000 | 4.373.585 | 2,91% |
-| Chi phí mỗi việc thành công | 4.350 | 4.472 | 2,8% |
- Lý do có thể do tính sai
+| Token | 240.000 | 245.585 | 2,27% |
+| Tool | 82.000 | 84.000 | 2,38% |
+| Làm lại [simulated] | 2.200.000 | 2.264.000 | 2,83% [simulated] |
+| Tổng [simulated] | 4.250.000 | 4.373.585 | 2,83% [simulated] |
+| Chi phí mỗi việc thành công [simulated] | 4.350 | 4.472 | 2,73% [simulated] |
+
+Lệch = trị tuyệt đối (bản nháp − số từ code) / số từ code × 100%; chưa có công thức của bản nháp để xác định nguyên nhân sai.
