@@ -105,7 +105,59 @@ if __name__ == '__main__':
     print(f"Chi phí mỗi việc trong phạm vi: {r['cps']:,.0f} đ")
     print(f"Cộng cố định: {cps_tong:,.0f} đ = {cps_tong / BASELINE:.2f}x  [simulated]")
 
-    # TODO CP2 · Nhiệm vụ B: đổi từng yếu tố, ghi vào bảng độ nhạy.
+    # Nhiệm vụ B1: đổi từng yếu tố, một lần đổi một yếu tố (simulated).
+    print('\nB1 · Đổi từng yếu tố (simulated)')
+    kich_ban = {
+        'Giá token gấp đôi':      dict(gia_vao=52, gia_ra=260),
+        'Giá token giảm một nửa': dict(gia_vao=13, gia_ra=65),
+        'Xem lại gấp đôi':        dict(he_so_xem_lai=2),
+        'Xem lại giảm một nửa':   dict(he_so_xem_lai=0.5),
+        'Làm lại gấp đôi':        dict(he_so_lam_lai=2),
+        'Làm lại giảm một nửa':   dict(he_so_lam_lai=0.5),
+        'Lương tăng 25%':         dict(luong_phut=2500),
+        'Tối đa 2 lần chạy':      dict(max_lan_chay=2),
+        'Chỉ 1 lần chạy':         dict(max_lan_chay=1),
+    }
+    goc = mo_hinh(runs, reqs)['cps']
+    doi = {}
+    for ten, kw in kich_ban.items():
+        cps = mo_hinh(runs, reqs, **kw)['cps']
+        doi[ten] = cps / goc - 1
+        print(f'{ten:25s} {cps:8,.0f} {(cps / goc - 1) * 100:+6.1f}%')
+
+    # Nhiệm vụ B2: đổi một cặp, và xếp hạng theo mức thay đổi tuyệt đối khi đổi một yếu tố.
+    cap = mo_hinh(runs, reqs, gia_vao=52, gia_ra=260, he_so_xem_lai=2)['cps']
+    print(f'\nB2 · Giá token gấp đôi + xem lại gấp đôi: {cap:,.0f} ({(cap / goc - 1) * 100:+.1f}%)')
+    print('Tổng hai tác động riêng:', f"{(doi['Giá token gấp đôi'] + doi['Xem lại gấp đôi']) * 100:+.1f}%")
+    cac_yeu_to = ['Giá token gấp đôi', 'Xem lại gấp đôi', 'Làm lại gấp đôi', 'Lương tăng 25%']
+    xep_hang = sorted(((t, doi[t]) for t in cac_yeu_to), key=lambda x: abs(x[1]), reverse=True)
+    print('Xếp hạng ba yếu tố mạnh nhất:', ' · '.join(f'{i}. {t}' for i, (t, _) in enumerate(xep_hang[:3], 1)))
+
+    # Nhiệm vụ B3: giới hạn chạy lại, tính cả hệ thống (nhân viên làm 12.000 đ cho mỗi yêu cầu không thành công).
+    print('\nB3 · Giới hạn chạy lại')
+    print(f"{'giới hạn':>8s} {'tổng trợ lý':>14s} {'không thành công':>17s} {'cả hệ thống':>14s} {'cps':>8s}")
+    for gioi_han in [1, 2, 3]:
+        r = mo_hinh(runs, reqs, max_lan_chay=gioi_han)
+        khong_tc = len(reqs) - r['thanh_cong']
+        he_thong = r['tong'] + BASELINE * khong_tc
+        print(f"{gioi_han:8d} {r['tong']:14,.0f} {khong_tc:17d} {he_thong:14,.0f} {r['cps']:8,.0f}")
+
+    # Nhiệm vụ B4: xem lại 100% trong phạm vi noi_dia + hang_nang (theo cách tính trong hướng dẫn).
+    pv = reqs[reqs.loai.isin(['noi_dia', 'hang_nang'])]
+    pv_runs = runs[runs.request_id.isin(pv.request_id)]
+    tien_pv = (pv_runs['tokens_in'] / 1000 * GIA_VAO + pv_runs['tokens_out'] / 1000 * GIA_RA
+               + pv_runs['tool_calls'] * GIA_TOOL).sum()
+    yc_co_ok = pv_runs[pv_runs.status == 'ok'].request_id.nunique()
+    ca_lam_lai = (pv['ket_qua'] == 'lam_lai').sum()
+    # Trung bình trên toàn bộ ca làm lại (mọi depot, mọi loại), theo hướng dẫn: 15,3 phút.
+    phut_lam_lai_tb = reqs.loc[reqs['ket_qua'] == 'lam_lai', 'phut_lam_lai_simulated'].mean()
+    thanh_cong_pv = (pv['ket_qua'] == 'thanh_cong').sum()
+    for ten, phut_lam in [('9 phút/ca (đề)', 9), (f'{phut_lam_lai_tb:.1f} phút/ca (dữ liệu)', phut_lam_lai_tb)]:
+        tong_pv = tien_pv + yc_co_ok * 5 * LUONG_PHUT + ca_lam_lai * phut_lam * LUONG_PHUT
+        cps_pv = tong_pv / thanh_cong_pv
+        print(f'\nB4 · Xem lại 100% ({ten}): {cps_pv:,.0f} đ = {cps_pv / BASELINE:.2f}x [simulated]')
+
+    # TODO CP4 · Nhiệm vụ D: cỡ mẫu.
     # TODO CP4 · Nhiệm vụ D: cỡ mẫu.
     #   from statsmodels.stats.proportion import proportion_effectsize
     #   from statsmodels.stats.power import NormalIndPower
