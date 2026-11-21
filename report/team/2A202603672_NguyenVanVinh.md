@@ -26,12 +26,15 @@
 
 ## 5. Công cụ AI đã dùng
 
-Công cụ nào, dùng vào việc gì, bạn tự kiểm tra kết quả ra sao.
-
-...
+- Công cụ: trợ lý AI (agent lập trình chạy trong repo của nhóm).
+- Dùng để tóm tắt repo và đề bài, hướng dẫn các bước cần làm theo vai người gắn nhãn 2 kiêm giữ hồ sơ.
+- Theo yêu cầu của tôi, AI soạn và điền nội dung từ số liệu nhóm đã tính: các mục của `ho_so_launch_v0.md` và đề xuất cuối, E2 trong `chi_so.md`, `group_report.md`, `phieu_cham.md`; gộp nhánh và commit, push. Tôi quyết định làm phần nào, đọc lại kết quả trước khi nộp; câu trả lời của đội trình và kết quả duyệt chéo do tôi ghi lại tại buổi.
+- Không dùng AI để gắn nhãn: 20 ca ở CP3 tôi tự gắn độc lập (phiếu gốc có lý do từng ca); AI chỉ chép nhãn vào bảng và không so với đáp án trước khi người gắn nhãn 1 gắn xong.
+- Tự kiểm tra: đối chiếu mọi số trong hồ sơ với `bang_chi_phi.md` và output của `src/lab13.py`; chạy lại `lab13.py`, kiểm `pilot_plan.yaml` bằng `yaml.safe_load`, tìm từ cấm trong `report/team/`.
 
 ## 6. Tự đánh giá
 
 - Đã có khung hồ sơ từ sớm, nên khi A xong thì điền ngay được mục 1 và 3, đúng nhãn `simulated`.
-- Mục 2, 4, 5, 6, 7 và đề xuất cuối còn chờ nhiệm vụ B–E; phần gắn nhãn CP3 chưa làm.
+- Hồ sơ đủ bảy mục và đề xuất Go có điều kiện; hội đồng chấm nhóm 30/30, Go có điều kiện.
+- Nhãn độc lập của tôi khớp 19/20 ca với nhãn thống nhất (lệch ca 18: tôi gắn Hệ thống, nhãn chốt là Ngữ cảnh); đồng thuận với người gắn nhãn 1 chỉ 55%, nên cần thống nhất định nghĩa trước khi gắn ở lần sau.
 - Trước buổi bảo vệ cần tự giải thích được vì sao chi phí mỗi việc thành công (4.472 đ) chưa so trực tiếp được với 12.000 đ khi chưa cộng phần chuyển nhân viên.
