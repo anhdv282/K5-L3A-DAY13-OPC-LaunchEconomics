@@ -85,4 +85,4 @@ Các mốc giờ trong [CHECKPOINTS.md](CHECKPOINTS.md) là checkpoint tại l�
 - [x] Không có từ "production" trong file hồ sơ.
 - [x] Không commit secret, password, file `.env`.
 - [x] Đã push lên GitHub; repo mở được cho người chấm.
-- [ ] Mọi thành viên đã nộp cùng link repo trên LMS trước deadline.
+- [x] Mọi thành viên đã nộp cùng link repo trên LMS trước deadline.
