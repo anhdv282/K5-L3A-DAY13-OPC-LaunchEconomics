@@ -18,7 +18,7 @@
 
 - Đối chiếu CP1 với `CHECKPOINTS.md`: `python lab13.py` in "ĐẠT", số A2 khớp đáp án (4.373.585 đ, 978 việc thành công, 4.472 đ/việc [simulated]). Phát hiện lúc đó còn thiếu A3, A4 trong code, `bang_chi_phi.md` chưa điền và `TEAM.md` chưa chia vai, báo lại nhóm.
 - Ghi chú lỗi in tiếng Việt trên terminal Windows (`UnicodeEncodeError`), cách chạy: `python -X utf8 lab13.py`.
-- Soát tiến độ sau CP2: B1–B4 đủ, không có từ "production" trong `report/team/`; nhắc người giữ hồ sơ cập nhật mục 2, 3.
+- Soát tiến độ sau CP2: B1–B4 đủ, không có từ cấm (quy tắc 5) trong `report/team/`; nhắc người giữ hồ sơ cập nhật mục 2, 3.
 
 **Gắn nhãn CP3**
 

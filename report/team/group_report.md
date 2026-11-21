@@ -22,7 +22,7 @@ Cách tiếp cận: mọi con số do `src/lab13.py` của nhóm tính từ hai 
 | B · Độ nhạy | Gọi lại `mo_hinh` cho 9 kịch bản, một cặp, giới hạn 1–3 lần chạy tính cả phần nhân viên làm thay, và kịch bản xem lại 100% | [bang_chi_phi.md](bang_chi_phi.md) |
 | C · Bảng lỗi | Hai người gắn nhãn độc lập 20 ca, so nhãn, viết lại định nghĩa, thống nhất nhãn, chọn 5 ca cho bảng khắc phục | [bang_loi.md](bang_loi.md) |
 | D · Pilot | Tính năm câu D1 trước, chọn chia theo nhân viên 20 + 20, viết D2 và 4 luật dừng; kiểm bằng `yaml.safe_load` | [pilot_plan.yaml](pilot_plan.yaml) |
-| E · Chỉ số, hồ sơ | Tính thử ba chỉ số, 10 event có `trace_id`, 4 dòng rủi ro kinh tế; ghép A–E thành hồ sơ một trang | [chi_so.md](chi_so.md), [ho_so_launch_v0.md](ho_so_launch_v0.md) |
+| E · Chỉ số, hồ sơ | Tính thử ba chỉ số, đặc tả 11 event có `trace_id`, 4 dòng rủi ro kinh tế; ghép A–E thành hồ sơ một trang | [chi_so.md](chi_so.md), [ho_so_launch_v0.md](ho_so_launch_v0.md) |
 
 ## 4. Kết quả
 
@@ -38,6 +38,7 @@ Cách tiếp cận: mọi con số do `src/lab13.py` của nhóm tính từ hai 
 ## 5. Khó khăn và cách xử lý
 
 - **Cài đặt:** có máy chưa có `pandas`, chạy `python lab13.py` báo `ModuleNotFoundError`; xử lý bằng venv và `pip install -r requirements.txt`. Terminal Windows lỗi khi in tiếng Việt; chạy `python -X utf8 lab13.py`.
+- **Xung đột khi gộp bài:** `bang_chi_phi.md` từng xung đột merge và có số kiểm tay nháp lệch trên 2%; giữ số đã kiểm bằng `lab13.py`, số nháp chỉ để đối chiếu.
 - **So sánh với 12.000 đ:** 4.472 / 12.000 = 0,37× là so sai vì chưa tính 222 yêu cầu nhân viên làm thay; nhóm dùng chi phí cả hệ thống (0,49×).
 - **Đồng thuận gắn nhãn thấp (55% < 80%):** hai người lẫn ở bốn cặp loại (Hệ thống/Ngữ cảnh, Hệ thống/Ngầm, Giới hạn/Ngữ cảnh, Do người dùng/Giới hạn). Nhóm viết lại định nghĩa thành bốn câu hỏi theo thứ tự và ghi quy tắc cho từng ca không trùng; không sửa bộ nhãn độc lập.
 - **Không cách chia nào đủ mẫu cho 5 điểm:** với 40 nhân viên, chia theo nhân viên tối đa 1.000 mẫu hiệu dụng < 1.251. Nhóm chấp nhận MDE 6 điểm và ghi rõ power 0,64 thay vì chia theo depot (chỉ 6 cụm).
@@ -50,7 +51,7 @@ Chi tiết đóng góp của từng thành viên nằm trong `TEAM.md`.
 | Thành viên | Vai | Phần chính |
 | --- | --- | --- |
 | Đặng Việt Anh | Người viết code (trước giải lao), sau đó kiểm số | A1–A4, B1–B4 trong `lab13.py`, `bang_chi_phi.md`, E1 trong `chi_so.md` |
-| Hà Huy Thái | Người kiểm số, sau đó viết code | Kiểm tay A, B; D1 trong `lab13.py` và `pilot_plan.yaml` |
+| Hà Huy Thái | Người kiểm số, sau đó viết code | Kiểm tay A, B; D1 và E1 trong `lab13.py`; `pilot_plan.yaml`; đặc tả 11 event trong `chi_so.md` |
 | Nguyễn Văn Vinh | Người gắn nhãn 2, kiêm giữ hồ sơ | Nhãn người 2; `ho_so_launch_v0.md` bảy mục và đề xuất; E2 rủi ro kinh tế |
 | Vũ Quang Minh | Người gắn nhãn 1 | Nhãn người 1; so nhãn, định nghĩa viết lại, bảng khắc phục trong `bang_loi.md` |
 
