@@ -33,7 +33,7 @@ Cách tiếp cận: mọi con số do `src/lab13.py` của nhóm tính từ hai 
 - Pilot: chia 20 + 20 nhân viên, MDE 6 điểm (859/nhóm, m ≥ 299, DE 6,96), power khoảng 0,64 nếu tác động thật là 5 điểm; quyết định 05/01/2027.
 - Chỉ số trong đợt chạy thử: chính 82,83% · dùng 27,12% · an toàn 4,25%.
 - **Đề xuất: Go có điều kiện** cho pilot noi_dia + hang_nang, bốn điều kiện có vai trò phụ trách và ngày kiểm tra.
-- Kết quả duyệt chéo từ hội đồng: điền sau buổi duyệt (điểm, quyết định, câu hỏi của hội đồng).
+- Kết quả duyệt chéo từ hội đồng: **30/30**, quyết định **Go có điều kiện**, khớp với đề xuất của nhóm.
 
 ## 5. Khó khăn và cách xử lý
 
