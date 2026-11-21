@@ -81,7 +81,30 @@ if __name__ == '__main__':
     ket_qua = mo_hinh(runs, reqs)
     for ten, gia_tri in ket_qua.items():
         print(f'{ten:12s} {gia_tri:>14,.0f}')
-    # TODO CP1 · Nhiệm vụ A3: tính lại theo từng giá trị của cột loai.
+    # Nhiệm vụ A3: tách theo loại yêu cầu.
+    print('\nA3 · Theo loại yêu cầu')
+    print(f"{'loai':10s} {'yc':>5s} {'tl_thanh_cong':>14s} {'lan/yc':>7s} {'cps':>8s} {'x 12000':>8s}")
+    for loai in ['noi_dia', 'hang_nang', 'quoc_te', 'doi_tac']:
+        con = reqs[reqs.loai == loai]
+        r = mo_hinh(runs, con)
+        so_lan = len(runs[runs.request_id.isin(con.request_id)])
+        print(f"{loai:10s} {len(con):5d} {r['thanh_cong'] / len(con):13.1%} "
+              f"{so_lan / len(con):7.2f} {r['cps']:8,.0f} {r['cps'] / BASELINE:7.2f}x")
+
+    # Nhiệm vụ A4: cộng chi phí cố định 40 triệu đ/tháng vào phạm vi pilot (noi_dia + hang_nang).
+    YC_THANG = 45000        # yêu cầu mỗi tháng ở quy mô đầy đủ
+    CHI_PHI_CO_DINH = 40_000_000
+    pham_vi = reqs[reqs.loai.isin(['noi_dia', 'hang_nang'])]
+    r = mo_hinh(runs, pham_vi)
+    viec_thang = YC_THANG * r['thanh_cong'] / len(reqs)   # số việc thành công mỗi tháng
+    co_dinh_moi_viec = CHI_PHI_CO_DINH / viec_thang
+    cps_tong = r['cps'] + co_dinh_moi_viec
+    print('\nA4 · Chi phí cố định trong phạm vi noi_dia + hang_nang')
+    print(f"Việc thành công mỗi tháng (quy mô đầy đủ): {viec_thang:,.0f}")
+    print(f"Chi phí cố định mỗi việc: {co_dinh_moi_viec:,.0f} đ")
+    print(f"Chi phí mỗi việc trong phạm vi: {r['cps']:,.0f} đ")
+    print(f"Cộng cố định: {cps_tong:,.0f} đ = {cps_tong / BASELINE:.2f}x  [simulated]")
+
     # TODO CP2 · Nhiệm vụ B: đổi từng yếu tố, ghi vào bảng độ nhạy.
     # TODO CP4 · Nhiệm vụ D: cỡ mẫu.
     #   from statsmodels.stats.proportion import proportion_effectsize
