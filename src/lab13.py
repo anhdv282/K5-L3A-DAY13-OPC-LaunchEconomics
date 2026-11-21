@@ -163,7 +163,47 @@ if __name__ == '__main__':
         print(f'Xem lại hòa vốn tối đa: {phut_xem_hoa_von:.1f} phút/yêu cầu '
               '[simulated; chưa cộng chi phí cố định]')
 
-    # TODO CP4 · Nhiệm vụ D: cỡ mẫu.
-    # TODO CP4 · Nhiệm vụ D: cỡ mẫu.
-    #   from statsmodels.stats.proportion import proportion_effectsize
-    #   from statsmodels.stats.power import NormalIndPower
+    # Nhiệm vụ D1: cỡ mẫu và giới hạn khi chia theo cụm.
+    from statistics import NormalDist
+    from statsmodels.stats.proportion import proportion_effectsize
+    from statsmodels.stats.power import NormalIndPower
+
+    def co_mau(p1, p2, alpha=0.05, power=0.8):
+        """Cỡ mẫu mỗi nhóm theo công thức hai tỉ lệ trong hướng dẫn."""
+        za = NormalDist().inv_cdf(1 - alpha / 2)
+        zb = NormalDist().inv_cdf(power)
+        pb = (p1 + p2) / 2
+        return math.ceil((za * math.sqrt(2 * pb * (1 - pb))
+                          + zb * math.sqrt(p1 * (1 - p1) + p2 * (1 - p2))) ** 2
+                         / (p2 - p1) ** 2)
+
+    icc = 0.02
+    n_5_diem = co_mau(0.70, 0.75)
+    de_75 = 1 + (75 - 1) * icc
+    n_theo_nhan_vien = math.ceil(n_5_diem * de_75)
+    nguoi_moi_nhom = math.ceil(n_theo_nhan_vien / 75)
+    n_6_diem = co_mau(0.70, 0.76)
+    so_cum = 20
+    m_6_diem = math.ceil(n_6_diem * (1 - icc) / (so_cum - n_6_diem * icc))
+    de_6_diem = 1 + (m_6_diem - 1) * icc
+    n_hieu_dung = so_cum * m_6_diem / de_6_diem
+    power_5_diem = NormalIndPower().power(
+        effect_size=proportion_effectsize(0.75, 0.70), nobs1=n_6_diem,
+        alpha=0.05, ratio=1, alternative='two-sided')
+
+    print('\nD1 · Cỡ mẫu (giả định của lab: baseline 0,70; alpha 0,05; power 0,80; ICC 0,02)')
+    print(f'a) Theo yêu cầu: {n_5_diem:,} yêu cầu mỗi nhóm')
+    print(f'b) Theo nhân viên, m=75: DE={de_75:.2f}; {n_theo_nhan_vien:,} yêu cầu/nhóm; '
+          f'{nguoi_moi_nhom} người/nhóm, tổng {2 * nguoi_moi_nhom} > 40: không đủ người')
+    print(f'c) 20 người/nhóm: trần tiệm cận {20 / icc:,.0f} mẫu hiệu dụng < {n_5_diem:,}')
+    print(f'd) 6 depot/nhóm: trần tiệm cận {6 / icc:,.0f} mẫu hiệu dụng; chỉ 6 cụm < 20')
+    print(f'e) MDE 6 điểm: cần {n_6_diem} mẫu hiệu dụng/nhóm; tối thiểu {m_6_diem} yêu cầu/người; '
+          f'DE={de_6_diem:.2f}; n hiệu dụng={n_hieu_dung:.2f}')
+    print(f'Kế hoạch 20 người/nhóm cần ít nhất {so_cum * m_6_diem:,} yêu cầu thực tế/nhóm; '
+          f'nếu tác động thật chỉ 5 điểm, power khoảng {power_5_diem:.2f}')
+
+    mo_lai = int(reqs['mo_lai_trong_7_ngay'].sum())
+    mo_lai_pv = int(pv['mo_lai_trong_7_ngay'].sum())
+    print(f'\nD3 · Mở lại 7 ngày trong dữ liệu lab: {mo_lai}/{len(reqs)} = '
+          f'{mo_lai / len(reqs):.2%}; phạm vi noi_dia + hang_nang: '
+          f'{mo_lai_pv}/{len(pv)} = {mo_lai_pv / len(pv):.2%}')
