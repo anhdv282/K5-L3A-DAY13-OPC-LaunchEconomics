@@ -73,16 +73,16 @@ Các mốc giờ trong [CHECKPOINTS.md](CHECKPOINTS.md) là checkpoint tại l�
 
 ## Checklist
 
-- [ ] Đổi tên repo theo đúng quy ước `K5-L3A-DAY13-…` (hoặc `K5-L3B-DAY13-…`).
+- [x] Đổi tên repo theo đúng quy ước `K5-L3A-DAY13-…` (hoặc `K5-L3B-DAY13-…`).
 - [ ] Điền `TEAM.md` ở root: thông tin nhóm, thành viên, vai, đóng góp.
-- [ ] Mỗi thành viên có file báo cáo đã đổi tên đúng định dạng `report/team/MSSV_HoTen.md`.
-- [ ] `cd src && python3 lab13.py` chạy hết trên một máy khác trong nhóm; ba phép thử A1 in ĐẠT (1,20 · 1,25 · 1,25).
-- [ ] Đủ sáu file hồ sơ trong `report/team/`, đúng tên.
-- [ ] Mọi con số từ cột `_simulated` có nhãn `simulated`.
-- [ ] `report/team/pilot_plan.yaml` đọc được bằng `yaml.safe_load` và không còn dấu `?`; ít nhất ba luật dừng đủ bốn vế NẾU – TRONG – THÌ – KHÔNG THÌ.
-- [ ] Mỗi mục hồ sơ có người phụ trách là một vai trò, không ghi "cả đội".
-- [ ] Đề xuất là một trong ba: Go, Go có điều kiện, No-go.
-- [ ] Không có từ "production" trong file hồ sơ.
-- [ ] Không commit secret, password, file `.env`.
-- [ ] Đã push lên GitHub; repo mở được cho người chấm.
+- [x] Mỗi thành viên có file báo cáo đã đổi tên đúng định dạng `report/team/MSSV_HoTen.md`.
+- [x] `cd src && python3 lab13.py` chạy hết trên một máy khác trong nhóm; ba phép thử A1 in ĐẠT (1,20 · 1,25 · 1,25).
+- [x] Đủ sáu file hồ sơ trong `report/team/`, đúng tên.
+- [x] Mọi con số từ cột `_simulated` có nhãn `simulated`.
+- [x] `report/team/pilot_plan.yaml` đọc được bằng `yaml.safe_load` và không còn dấu `?`; ít nhất ba luật dừng đủ bốn vế NẾU – TRONG – THÌ – KHÔNG THÌ.
+- [x] Mỗi mục hồ sơ có người phụ trách là một vai trò, không ghi "cả đội".
+- [x] Đề xuất là một trong ba: Go, Go có điều kiện, No-go.
+- [x] Không có từ "production" trong file hồ sơ.
+- [x] Không commit secret, password, file `.env`.
+- [x] Đã push lên GitHub; repo mở được cho người chấm.
 - [ ] Mọi thành viên đã nộp cùng link repo trên LMS trước deadline.
