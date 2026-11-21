@@ -6,14 +6,17 @@ Nhóm: OPC · Lớp: L3A
 
 | Mục | Con số chính | Trạng thái | Người phụ trách |
 | --- | --- | --- | --- |
-| 1 · Chi phí mỗi việc thành công | 4.472 đ/việc trên 1.200 yêu cầu, gấp 16,3 lần hoá đơn token + tool chia số yêu cầu (274,7 đ) [simulated]; phạm vi noi_dia + hang_nang cộng cố định 40 triệu/tháng: 4.599 đ ở 45.000 yc/tháng, 5.784 đ nếu còn một nửa [simulated] | Giả lập | PM trợ lý hoàn phí |
-| 2 · Ba yếu tố nhạy nhất | 1. số ca làm lại gấp đôi +51,8% (6.787 đ) · 2. tỉ lệ xem lại gấp đôi +40,7% (6.292 đ) · 3. lương tăng 25% +23,1% (5.506 đ) [simulated]; giá token gấp đôi chỉ +5,6% [simulated] | Giả lập | PM trợ lý hoàn phí |
-| 3 · So với nhân viên tự làm | Theo loại: noi_dia 0,22×, hang_nang 0,69×, doi_tac 0,85×, quoc_te 1,88× (thành công 27,3%) [simulated]. Cả hệ thống, cộng 222 ca nhân viên làm thay: 7.037.585 ÷ 1.200 = 5.865 đ/yêu cầu = 0,49× [simulated]; giới hạn 2 lần chạy rẻ nhất (6.901.220 đ) [simulated]. Bất lợi: xem lại 100% noi_dia + hang_nang thì 11.743 đ = 0,98×, hoặc 1,03× nếu làm lại 15,3 phút như dữ liệu [simulated] | Giả lập | Giám đốc vận hành |
-| 4 · Chỉ số chính, chỉ số dùng, chỉ số an toàn | (chờ E1 trong `chi_so.md`) | Chưa | Trưởng nhóm CSKH |
-| 5 · Bảng lỗi và cách khắc phục | 20 ca: Do người dùng 4 · Hệ thống 5 · Ngữ cảnh 4 · Giới hạn 4 · Ngầm 3; đồng thuận độc lập 11/20 = 55% (< 80%), đã viết lại định nghĩa theo bốn câu hỏi thứ tự và ghi quy tắc cho 9 ca không trùng; bảng khắc phục 5 ca (9, 7, 18, 13, 12), mỗi ca có event, ngưỡng và một vai trò phụ trách | Xong, có bằng chứng | Kỹ sư trưởng agent |
-| 6 · Pilot plan | (chờ D1, D2 trong `pilot_plan.yaml`) | Chưa | Giám đốc vận hành |
-| 7 · Rủi ro kinh tế | (chờ E2 trong `chi_so.md`) | Chưa | PM trợ lý hoàn phí |
+| 1 · Chi phí mỗi việc thành công | 4.472 đ/việc, gấp 16,3× hoá đơn/yêu cầu [simulated]. Phạm vi noi_dia + hang_nang cộng cố định 40 triệu/tháng: 4.599 đ ở 45.000 yêu cầu/tháng; 5.784 đ nếu giảm nửa [simulated] | Giả lập | PM trợ lý hoàn phí |
+| 2 · Ba yếu tố nhạy nhất | Làm lại gấp đôi: +51,8%, 6.787 đ; xem lại gấp đôi: +40,7%, 6.292 đ; lương tăng 25%: +23,1%, 5.506 đ [simulated] | Giả lập | PM trợ lý hoàn phí |
+| 3 · So với nhân viên tự làm | Cả hệ thống chưa cộng cố định: 5.865 đ/yêu cầu = 0,49× mức 12.000 đ [simulated]. Loại quoc_te vì 22.515 đ/việc = 1,88×; loại doi_tac vì điều khoản riêng, chi phí 0,85× [simulated]. Bất lợi: xem lại 100% trong phạm vi tốn 11.743–12.415 đ/việc = 0,98–1,03× [simulated] | Giả lập | Giám đốc vận hành |
+| 4 · Chỉ số chính, chỉ số dùng, chỉ số an toàn | Lần lượt 994/1.200 = 82,83%; 48/177 = 27,12%; 51/1.200 = 4,25%. Đặc tả 11 event có trace_id trong `chi_so.md`; chưa có đối chứng để kết luận tác động | Xong, có bằng chứng | Trưởng nhóm CSKH |
+| 5 · Bảng lỗi và cách khắc phục | 20 ca; hai bộ nhãn trùng 11/20 = 55%, dưới 80%; đã viết lại định nghĩa, giải thích 9 ca khác nhau và có bảng khắc phục đủ 5 loại lỗi | Xong, có bằng chứng | Kỹ sư trưởng agent |
+| 6 · Pilot plan | 20 người/nhóm, 299 yêu cầu/người = 5.980 mẫu quan sát/nhóm; DE 6,96, mẫu hiệu dụng 859; MDE 6 điểm, power khoảng 0,64 nếu tác động thật 5 điểm. Có 4 luật dừng; quyết định 05/01/2027 khi đủ mẫu và theo dõi | Xong, có bằng chứng | Giám đốc vận hành |
+| 7 · Rủi ro kinh tế | 3 rủi ro trong `chi_so.md`: làm lại +51,8%; xem lại 100% lên 1,03× nhân viên; khối lượng giảm nửa làm cố định/việc tăng từ 1.185 lên 2.370 đ [simulated] | Giả lập | PM trợ lý hoàn phí |
 
-**Đề xuất:** Go · Go có điều kiện · No-go (giữ một). Go có điều kiện: ghi từng điều kiện, người phụ trách, ngày kiểm tra. No-go: ghi việc phải làm để quay lại cổng.
+- Kỹ sư trưởng agent: trước 22/11/2026 có bằng chứng kiểm thử ca 7 và 20, không báo đã hoàn khi ghi sổ lỗi và không hoàn trùng.
+- Giám đốc vận hành: trước 22/11/2026 ký chấp nhận MDE 6 điểm và power khoảng 0,64 ở mức 5 điểm; chỉ duyệt pilot noi_dia + hang_nang.
+- Kỹ sư trưởng agent: trước 22/11/2026 bật đủ 11 event, 100% event có trace_id và request_id; kiểm tra cách tính đủ 5 chỉ số đã đặc tả.
+- Trưởng nhóm CSKH: trước 22/11/2026 thống nhất định nghĩa lỗi đã sửa; tuần đầu xem lại 100%, đo phút thật và kiểm ngày 29/11/2026; ngày 06/12/2026 chỉ giảm xem lại khi sửa + bỏ < 15% và không vi phạm luật an toàn.
 
-- ...
+**Đề xuất:** Go có điều kiện cho kế hoạch pilot; chỉ bắt đầu khi các điều kiện trước pilot ở trên đã có bằng chứng, tuân thủ các mốc kiểm tra và luật dừng trong `pilot_plan.yaml`.

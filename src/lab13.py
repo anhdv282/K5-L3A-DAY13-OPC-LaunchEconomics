@@ -207,3 +207,22 @@ if __name__ == '__main__':
     print(f'\nD3 · Mở lại 7 ngày trong dữ liệu lab: {mo_lai}/{len(reqs)} = '
           f'{mo_lai / len(reqs):.2%}; phạm vi noi_dia + hang_nang: '
           f'{mo_lai_pv}/{len(pv)} = {mo_lai_pv / len(pv):.2%}')
+
+    # Nhiệm vụ E1: chỉ số của đợt chạy thử, chưa có nhóm đối chứng.
+    dong_dung_han_khong_mo = (reqs['dong_trong_24h'] == 1) & (reqs['mo_lai_trong_7_ngay'] == 0)
+    so_dat_chinh = int(dong_dung_han_khong_mo.sum())
+    duoc_xem_lai = reqs[reqs['duoc_xem_lai'] == 1]
+    so_bo_qua = int(duoc_xem_lai['quyet_dinh_xem_lai'].isin(['sua', 'bo']).sum())
+    so_mo_lai = int((reqs['mo_lai_trong_7_ngay'] == 1).sum())
+    print('\nE1 · Chỉ số trong đợt chạy thử (dữ liệu giả lập của lab)')
+    print(f'Chính: đóng trong 24 giờ và không mở lại 7 ngày: '
+          f'{so_dat_chinh}/{len(reqs)} = {so_dat_chinh / len(reqs):.2%}')
+    print(f'Dùng: sửa hoặc bỏ gợi ý trên yêu cầu được xem lại: '
+          f'{so_bo_qua}/{len(duoc_xem_lai)} = {so_bo_qua / len(duoc_xem_lai):.2%}')
+    print(f'An toàn: mở lại trong 7 ngày: '
+          f'{so_mo_lai}/{len(reqs)} = {so_mo_lai / len(reqs):.2%}')
+    print('Chưa có đối chứng: không kết luận trợ lý đã nâng chỉ số từ 70%.')
+    print('Hai chỉ số đề xuất về mở trợ lý và kiểm tra sai tiền cần event mới; không suy ra từ CSV hiện có.')
+    so_lam_lai_pv = int((pv['ket_qua'] == 'lam_lai').sum())
+    print(f'E2 · Nền theo dõi làm lại trong phạm vi: '
+          f'{so_lam_lai_pv}/{len(pv)} = {so_lam_lai_pv / len(pv):.2%}')
