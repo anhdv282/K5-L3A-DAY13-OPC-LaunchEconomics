@@ -60,6 +60,25 @@ Sao chép mục dưới đây cho từng thành viên.
 - Output `python lab13.py`: tổng 4.373.585 đ, 978 việc thành công, cps 4.472 đ; A3, A4 và B1–B4 khớp hướng dẫn (B4 là 1,03×).
 - File `report/team/bang_chi_phi.md` (A1–B4) và `report/team/2A202603685_DangVietAnh.md`.
 
+## HaHuyThai - 2A202603682
+
+### Phần việc phụ trách
+
+- Người kiểm số CP1–CP2; chuyển sang viết code từ CP3.
+- Tính D1, hoàn thiện kế hoạch pilot CP4; tính và kiểm số E1, đặc tả event CP5.
+- Báo cáo cá nhân `report/team/2A202603682_HaHuyThai.md`.
+
+### Đóng góp cụ thể
+
+- Kiểm tay A1–A4, B1–B4, đối chiếu CSV và hướng dẫn; bổ sung nhãn `simulated`, xử lý xung đột bảng chi phí.
+- Bổ sung B4 và ngưỡng xem lại hòa vốn; tính đủ năm câu D1, hoàn thiện phương án 20 nhân viên/nhóm, MDE 6 điểm và bốn luật dừng.
+- Viết code E1, kiểm ba chỉ số 82,83% · 27,12% · 4,25%; đặc tả 11 event trong `chi_so.md`.
+
+### Bằng chứng
+
+- Commit `77e12b0` (CP1), `a55286f` (CP2), `13e8b83` (CP3), `0cb2f6e` (CP4), `9efd23a` (CP5).
+- File `src/lab13.py`, `report/team/bang_chi_phi.md`, `report/team/pilot_plan.yaml`, `report/team/chi_so.md`, `report/team/2A202603682_HaHuyThai.md`.
+
 ## NguyenVanVinh - 2A202603672
 
 ### Phần việc phụ trách
